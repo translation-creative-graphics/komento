@@ -1,0 +1,118 @@
+name: Build Language Packs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build ZIPs
+        run: python build_language_packs.py
+
+      - name: Delete existing latest release
+        run: gh release delete latest --yes --cleanup-tag || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create latest release
+        run: |
+          gh release create latest \
+            --title "CRE8 Comments Language Packs (latest)" \
+            --notes "Automatically built from the latest translations on \`main\`.
+
+          **Install:** Download the ZIP for your language and install via *Joomla → System → Install → Extensions*." \
+            dist/*.zip
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate downloads-komento.xml
+        run: |
+          python3 << 'PYEOF'
+          import re, subprocess
+          from pathlib import Path
+          from datetime import datetime, timezone
+
+          lang_names = {
+              "ar-SA": "Arabic",                  "bg-BG": "Bulgarian",
+              "ca-ES": "Catalan",                 "cs-CZ": "Czech",
+              "da-DK": "Danish",                  "de-DE": "German",
+              "el-GR": "Greek",                   "es-ES": "Spanish",
+              "et-EE": "Estonian",                "fa-IR": "Persian",
+              "fi-FI": "Finnish",                 "fr-FR": "French",
+              "hu-HU": "Hungarian",               "it-IT": "Italian",
+              "nb-NO": "Norwegian",               "pl-PL": "Polish",
+              "pt-BR": "Portuguese (Brazil)",     "pt-PT": "Portuguese",
+              "ro-RO": "Romanian",                "ru-RU": "Russian",
+              "sk-SK": "Slovak",                  "sr-Cyrl": "Serbian",
+              "sv-SE": "Swedish",                 "tr-TR": "Turkish",
+              "vi-VN": "Vietnamese",              "zh-CN": "Chinese (Simplified)",
+          }
+
+          base_url = "https://github.com/translation-creative-graphics/komento/releases/download/latest"
+
+          items = []
+          for zip_file in sorted(Path("dist").glob("com_komento_*.zip")):
+              match = re.search(r"com_komento_([a-zA-Z]{2}[-_][a-zA-Z]{2,4})\.zip", zip_file.name)
+              if not match:
+                  continue
+              code = match.group(1)
+              name = lang_names.get(code, code)
+              size = zip_file.stat().st_size
+              download = f"{base_url}/{zip_file.name}"
+
+              result = subprocess.run(
+                  ["git", "log", "-1", "--format=%cI", "--",
+                   f"language/{code}/", f"administrator/language/{code}/"],
+                  capture_output=True, text=True
+              )
+              raw = result.stdout.strip()
+              if raw:
+                  updated = datetime.fromisoformat(raw).astimezone(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+              else:
+                  updated = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+
+              items.append({"code": code, "name": name, "download": download, "size": size, "updated": updated})
+
+          items.sort(key=lambda x: x["name"].lower())
+
+          lines = ['<?xml version="1.0" encoding="UTF-8"?>', "<languages>"]
+          for item in items:
+              lines += [
+                  "  <language>",
+                  f"    <code>{item['code']}</code>",
+                  f"    <name>{item['name']}</name>",
+                  f"    <download>{item['download']}</download>",
+                  f"    <size>{item['size']}</size>",
+                  f"    <updated>{item['updated']}</updated>",
+                  "  </language>",
+              ]
+          lines.append("</languages>")
+
+          Path("downloads-komento.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
+          print(f"Generated downloads-komento.xml with {len(items)} languages")
+          PYEOF
+
+      - name: Commit downloads-komento.xml
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add downloads-komento.xml
+          git diff --staged --quiet || git commit -m "chore: update downloads-komento.xml [skip ci]"
+          git push
