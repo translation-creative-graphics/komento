@@ -43,6 +43,13 @@
     <updated>2026-05-11 21:08:26</updated>
   </language>
   <language>
+    <code>nl-NL</code>
+    <name>Dutch</name>
+    <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_nl-NL.zip</download>
+    <size>45859</size>
+    <updated>2026-05-11 21:15:56</updated>
+  </language>
+  <language>
     <code>et-EE</code>
     <name>Estonian</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_et-EE.zip</download>
