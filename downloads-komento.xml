@@ -20,7 +20,7 @@
     <code>ca-ES</code>
     <name>Catalan</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_ca-ES.zip</download>
-    <size>7990</size>
+    <size>7991</size>
     <updated>2026-06-16 18:06:59</updated>
     <progress>18</progress>
   </language>
@@ -52,9 +52,9 @@
     <code>nl-NL</code>
     <name>Dutch</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_nl-NL.zip</download>
-    <size>45707</size>
+    <size>45708</size>
     <updated>2026-06-15 06:54:32</updated>
-    <progress>99</progress>
+    <progress>100</progress>
   </language>
   <language>
     <code>et-EE</code>
@@ -92,7 +92,7 @@
     <code>el-GR</code>
     <name>Greek</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_el-GR.zip</download>
-    <size>17500</size>
+    <size>17501</size>
     <updated>2026-06-16 18:06:59</updated>
     <progress>35</progress>
   </language>
@@ -164,7 +164,7 @@
     <code>ru-RU</code>
     <name>Russian</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_ru-RU.zip</download>
-    <size>47963</size>
+    <size>47964</size>
     <updated>2026-06-16 18:06:59</updated>
     <progress>92</progress>
   </language>
