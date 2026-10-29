@@ -4,7 +4,7 @@
     <code>ar-SA</code>
     <name>Arabic</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_ar-SA.zip</download>
-    <size>13868</size>
+    <size>13869</size>
     <updated>2026-08-29 16:50:05</updated>
     <progress>20</progress>
   </language>
@@ -12,7 +12,7 @@
     <code>bg-BG</code>
     <name>Bulgarian</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_bg-BG.zip</download>
-    <size>39024</size>
+    <size>39025</size>
     <updated>2026-08-29 16:50:22</updated>
     <progress>72</progress>
   </language>
@@ -28,7 +28,7 @@
     <code>zh-CN</code>
     <name>Chinese (Simplified)</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_zh-CN.zip</download>
-    <size>38375</size>
+    <size>38376</size>
     <updated>2026-08-29 16:58:23</updated>
     <progress>85</progress>
   </language>
@@ -36,7 +36,7 @@
     <code>cs-CZ</code>
     <name>Czech</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_cs-CZ.zip</download>
-    <size>21346</size>
+    <size>21347</size>
     <updated>2026-08-29 16:50:54</updated>
     <progress>39</progress>
   </language>
@@ -44,7 +44,7 @@
     <code>da-DK</code>
     <name>Danish</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_da-DK.zip</download>
-    <size>34332</size>
+    <size>34333</size>
     <updated>2026-08-29 16:51:10</updated>
     <progress>74</progress>
   </language>
@@ -52,7 +52,7 @@
     <code>nl-NL</code>
     <name>Dutch</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_nl-NL.zip</download>
-    <size>55798</size>
+    <size>55799</size>
     <updated>2026-08-29 16:55:15</updated>
     <progress>100</progress>
   </language>
@@ -68,7 +68,7 @@
     <code>fi-FI</code>
     <name>Finnish</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_fi-FI.zip</download>
-    <size>12954</size>
+    <size>12955</size>
     <updated>2026-08-29 16:53:00</updated>
     <progress>19</progress>
   </language>
@@ -84,8 +84,8 @@
     <code>de-DE</code>
     <name>German</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_de-DE.zip</download>
-    <size>28360</size>
-    <updated>2026-08-29 16:51:27</updated>
+    <size>28316</size>
+    <updated>2026-10-29 09:24:00</updated>
     <progress>45</progress>
   </language>
   <language>
@@ -100,7 +100,7 @@
     <code>hu-HU</code>
     <name>Hungarian</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_hu-HU.zip</download>
-    <size>13432</size>
+    <size>13433</size>
     <updated>2026-08-29 16:53:45</updated>
     <progress>19</progress>
   </language>
@@ -108,7 +108,7 @@
     <code>it-IT</code>
     <name>Italian</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_it-IT.zip</download>
-    <size>44787</size>
+    <size>44788</size>
     <updated>2026-08-29 16:54:11</updated>
     <progress>80</progress>
   </language>
@@ -116,7 +116,7 @@
     <code>nb-NO</code>
     <name>Norwegian</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_nb-NO.zip</download>
-    <size>12539</size>
+    <size>12540</size>
     <updated>2026-08-29 16:54:52</updated>
     <progress>19</progress>
   </language>
@@ -124,7 +124,7 @@
     <code>fa-IR</code>
     <name>Persian</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_fa-IR.zip</download>
-    <size>50481</size>
+    <size>50482</size>
     <updated>2026-08-29 16:52:47</updated>
     <progress>98</progress>
   </language>
@@ -140,7 +140,7 @@
     <code>pt-PT</code>
     <name>Portuguese</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_pt-PT.zip</download>
-    <size>32609</size>
+    <size>32610</size>
     <updated>2026-08-29 16:56:06</updated>
     <progress>65</progress>
   </language>
@@ -148,7 +148,7 @@
     <code>pt-BR</code>
     <name>Portuguese (Brazil)</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_pt-BR.zip</download>
-    <size>46192</size>
+    <size>46193</size>
     <updated>2026-08-29 16:55:50</updated>
     <progress>98</progress>
   </language>
@@ -180,7 +180,7 @@
     <code>es-ES</code>
     <name>Spanish</name>
     <download>https://github.com/translation-creative-graphics/komento/releases/download/latest/com_komento_es-ES.zip</download>
-    <size>36468</size>
+    <size>36469</size>
     <updated>2026-08-29 16:52:15</updated>
     <progress>72</progress>
   </language>
